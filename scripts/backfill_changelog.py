@@ -69,11 +69,18 @@ def symbols(text, path):
 
 def summary_of(text):
     s = re.sub(r"\s+", " ", text).strip()
-    cut = len(s)
-    for sep in (". ", "; "):
-        i = s.find(sep)
-        if 0 < i < cut:
+    # the first ". " or "; " outside parentheses and backticks
+    cut, depth, tick = len(s), 0, False
+    for i, ch in enumerate(s):
+        if ch == "`":
+            tick = not tick
+        elif not tick and ch == "(":
+            depth += 1
+        elif not tick and ch == ")" and depth:
+            depth -= 1
+        elif not tick and depth == 0 and ch in ".;" and s[i + 1 : i + 2] == " " and i > 0:
             cut = i
+            break
     s = s[:cut].rstrip(".")
     if len(s) > 200:
         s = s[:197].rsplit(" ", 1)[0] + "..."
