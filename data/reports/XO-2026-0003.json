@@ -1,0 +1,33 @@
+{
+ "id": "XO-2026-0003",
+ "published": "2026-11-12",
+ "modified": "2026-11-15",
+ "summary": "std/json: `json.decode_go` no longer faults when a type error sits under a non-ASCII object key (`{\"é\": \"x\"}` decoded into `Map[Str, Int]`)",
+ "details": "`json.decode_go` no longer faults when a type error sits under a non-ASCII object key (`{\"é\": \"x\"}` decoded into `Map[Str, Int]`); it returns Go's error, `json: cannot unmarshal string into Go value of type int`. One such request could stop a server that decodes peer JSON with `decode_go`. Found by the decision 0616 review of std/json.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.50.1",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": [
+      "decode_go"
+     ]
+    }
+   ],
+   "backends": [
+    "llvm",
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, native and LLVM backends): `json.decode_go` no longer faults when a type error sits under a non-ASCII object key (`{\"é\": \"x\"}` decoded into `Map[Str, Int]`); it returns Go's error, `json: cannot unmarshal string into Go value of type int`. One such request could stop a server that decodes peer JSON with `decode_go`. Found by the decision 0616 review of std/json.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0006",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: a CONNECT ends HTTP on its connection, as Go 1.26.11 (GO-2026-6613, GO-2026-6605): the server closes after any answer and sends a 2xx one without framing fields, the client never pools the...",
+ "details": "a CONNECT ends HTTP on its connection, as Go 1.26.11 (GO-2026-6613, GO-2026-6605): the server closes after any answer and sends a 2xx one without framing fields, the client never pools the connection (send or open), and ReverseProxy answers CONNECT 405. Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-6605",
+  "GO-2026-6613"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, all backends): a CONNECT ends HTTP on its connection, as Go 1.26.11 (GO-2026-6613, GO-2026-6605): the server closes after any answer and sends a 2xx one without framing fields, the client never pools the connection (send or open), and ReverseProxy answers CONNECT 405. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

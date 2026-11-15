@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0062",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/amqp: `amqp.decode` and the frame and message decoders built on it refuse a list, map or array declaring more elements than its body has bytes, or more than 65,536, as go-amqp v1.7.0 does",
+ "details": "`amqp.decode` and the frame and message decoders built on it refuse a list, map or array declaring more elements than its body has bytes, or more than 65,536, as go-amqp v1.7.0 does; an array was exempt from the first check, so a value of a few bytes could ask for billions of elements of a type that takes no bytes and grow without bound (10 bytes asking for 10 million: 244 MB before, refused at once now). Affected: 0.41.0 to 0.51.1.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0.41.0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/amqp",
+     "symbols": [
+      "decode"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/amqp, every backend): `amqp.decode` and the frame and message decoders built on it refuse a list, map or array declaring more elements than its body has bytes, or more than 65,536, as go-amqp v1.7.0 does; an array was exempt from the first check, so a value of a few bytes could ask for billions of elements of a type that takes no bytes and grow without bound (10 bytes asking for 10 million: 244 MB before, refused at once now). Affected: 0.41.0 to 0.51.1.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

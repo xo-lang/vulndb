@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0025",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: IP name constraints whose address carries host bits are masked before matching, as Go 1.27.4",
+ "details": "IP name constraints whose address carries host bits are masked before matching, as Go 1.27.4; an excluded range written with host bits could fail to exclude an address in it. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, native backends): IP name constraints whose address carries host bits are masked before matching, as Go 1.27.4; an excluded range written with host bits could fail to exclude an address in it. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

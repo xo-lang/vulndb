@@ -1,0 +1,32 @@
+{
+ "id": "XO-2026-0038",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: chain building counts every candidate toward the 100 signature check limit and stops at it, and policy validation prunes once per certificate, as Go 1.27.4 (GO-2026-4947, GO-2026-4946)",
+ "details": "chain building counts every candidate toward the 100 signature check limit and stops at it, and policy validation prunes once per certificate, as Go 1.27.4 (GO-2026-4947, GO-2026-4946); a crafted intermediate pool can now end with `signature check attempts limit reached` where it was an unknown authority. Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-4946",
+  "GO-2026-4947"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, native backends): chain building counts every candidate toward the 100 signature check limit and stops at it, and policy validation prunes once per certificate, as Go 1.27.4 (GO-2026-4947, GO-2026-4946); a crafted intermediate pool can now end with `signature check attempts limit reached` where it was an unknown authority. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

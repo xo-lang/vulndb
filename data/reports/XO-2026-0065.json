@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0065",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/x509: `system_roots` applies the user and admin trust settings: a root denied for SSL is left out and a root trusted there is added, as Go 1.16's loadSystemRoots (GO-2022-0171",
+ "details": "`system_roots` applies the user and admin trust settings: a root denied for SSL is left out and a root trusted there is added, as Go 1.16's loadSystemRoots (GO-2022-0171; affects 0.51 and earlier). TLS on macOS already applied them through the Security framework.",
+ "aliases": [
+  "GO-2022-0171"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "platforms": [
+    "macOS"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, macOS): `system_roots` applies the user and admin trust settings: a root denied for SSL is left out and a root trusted there is added, as Go 1.16's loadSystemRoots (GO-2022-0171; affects 0.51 and earlier). TLS on macOS already applied them through the Security framework.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

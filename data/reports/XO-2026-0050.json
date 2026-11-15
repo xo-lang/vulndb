@@ -1,0 +1,30 @@
+{
+ "id": "XO-2026-0050",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: decoding a deep document no longer costs the square of its path: every member's path was built as text on the way down, decoded or not (2,500 levels of 1 KB keys: 637 ms, now 20 ms)",
+ "details": "decoding a deep document no longer costs the square of its path: every member's path was built as text on the way down, decoded or not (2,500 levels of 1 KB keys: 637 ms, now 20 ms). The path is turned into text only for an error, unchanged.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "go"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, Go backend): decoding a deep document no longer costs the square of its path: every member's path was built as text on the way down, decoded or not (2,500 levels of 1 KB keys: 637 ms, now 20 ms). The path is turned into text only for an error, unchanged.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

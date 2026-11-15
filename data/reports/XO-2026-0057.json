@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0057",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/http: an HTTP/2 connection gives its flow control window back for a handle_stream body as the handler reads it (and for unread bytes when the stream closes), as Go does, so it holds at most 1 MiB of...",
+ "details": "an HTTP/2 connection gives its flow control window back for a handle_stream body as the handler reads it (and for unread bytes when the stream closes), as Go does, so it holds at most 1 MiB of bodies no handler has read; before, 250 streams could park about 250 MiB. Affected: 0.51.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): an HTTP/2 connection gives its flow control window back for a handle_stream body as the handler reads it (and for unread bytes when the stream closes), as Go does, so it holds at most 1 MiB of bodies no handler has read; before, 250 streams could park about 250 MiB. Affected: 0.51.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

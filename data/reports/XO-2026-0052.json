@@ -1,0 +1,30 @@
+{
+ "id": "XO-2026-0052",
+ "published": "2026-11-14",
+ "modified": "2026-11-15",
+ "summary": "std/archive: `unzip` inflated a deflated file to its end before checking its declared size, and `unzip` and `gunzip` had no output limit, so a small hostile zip (a module zip from a proxy, too) could take...",
+ "details": "`unzip` inflated a deflated file to its end before checking its declared size, and `unzip` and `gunzip` had no output limit, so a small hostile zip (a module zip from a proxy, too) could take gigabytes of memory: a 204 KB zip took 276 MB for 200 MB of output, now 3.6 MB. Each file now stops past its declared size (Go's `zip: not a valid zip file`); both take `max_size` (default 1 GiB; unzip checks the declared sizes first); `xo mod` caps a module zip at 500 MB and its xo.mod and LICENSE at 16 MB, as Go. Affected: 0.51.0 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.1",
+   "imports": [
+    {
+     "path": "std/archive",
+     "symbols": []
+    }
+   ]
+  },
+  {
+   "module": "toolchain",
+   "introduced": "0",
+   "fixed": "0.51.1"
+  }
+ ],
+ "changelog": "- Security (std/archive, `xo mod`): `unzip` inflated a deflated file to its end before checking its declared size, and `unzip` and `gunzip` had no output limit, so a small hostile zip (a module zip from a proxy, too) could take gigabytes of memory: a 204 KB zip took 276 MB for 200 MB of output, now 3.6 MB. Each file now stops past its declared size (Go's `zip: not a valid zip file`); both take `max_size` (default 1 GiB; unzip checks the declared sizes first); `xo mod` caps a module zip at 500 MB and its xo.mod and LICENSE at 16 MB, as Go. Affected: 0.51.0 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0053",
+ "published": "2026-11-14",
+ "modified": "2026-11-15",
+ "summary": "std/http client: a streaming client read of a gzip response gave the whole received chunk to the decoder at once, so about 1 MB of hostile gzip could ask for up to 1 GiB of output in one step (6.4 GB of memory in...",
+ "details": "a streaming client read of a gzip response gave the whole received chunk to the decoder at once, so about 1 MB of hostile gzip could ask for up to 1 GiB of output in one step (6.4 GB of memory in 0.51.0 for a 1000 MB bomb, now 23 MB); the body now goes to the decoder 4 KiB at a time, so one step's output stays near 4 MB. `read_all` still gathers up to its `max_size` (default 1 GiB): pass a smaller one for untrusted servers. Affected: 0.51.0 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.1",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http client, native backends): a streaming client read of a gzip response gave the whole received chunk to the decoder at once, so about 1 MB of hostile gzip could ask for up to 1 GiB of output in one step (6.4 GB of memory in 0.51.0 for a 1000 MB bomb, now 23 MB); the body now goes to the decoder 4 KiB at a time, so one step's output stays near 4 MB. `read_all` still gathers up to its `max_size` (default 1 GiB): pass a smaller one for untrusted servers. Affected: 0.51.0 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

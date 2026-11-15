@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0024",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: a TokenReader resumes the scan of an unfinished string, number or literal where the last write stopped",
+ "details": "a TokenReader resumes the scan of an unfinished string, number or literal where the last write stopped; it rescanned the token from its start on every write, quadratic in a long token sent in pieces (a 400 KB string in 64 byte writes: 584 ms, now under 1 ms). Tokens and errors are unchanged.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, every backend): a TokenReader resumes the scan of an unfinished string, number or literal where the last write stopped; it rescanned the token from its start on every write, quadratic in a long token sent in pieces (a 400 KB string in 64 byte writes: 584 ms, now under 1 ms). Tokens and errors are unchanged.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

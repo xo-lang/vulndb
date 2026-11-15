@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0054",
+ "published": "2026-11-14",
+ "modified": "2026-11-15",
+ "summary": "std/time: a `Date`, `ClockTime` or `Civil` may hold any fields (a struct literal, or a JSON body decoded through `derive Json`), and with a year or another field far outside the calendar, `Date.weekday`,...",
+ "details": "a `Date`, `ClockTime` or `Civil` may hold any fields (a struct literal, or a JSON body decoded through `derive Json`), and with a year or another field far outside the calendar, `Date.weekday`, `add_days`, `add_months`, `days_until` and `display`, and `Civil.unix`, `to_time` and `format` faulted on the native backends (an intermediate overflow), so a server calling one of them on a decoded value could be stopped by a request; the Go backend gave wrong answers instead. Now weekday, display, to_time and format answer for every field, and the others fault only when their answer itself does not fit `Int`. Golden time_hostile_date: a server decoding a `Date` at `Int`'s ends answers 200 on every backend, where 0.51.0's native backends answered 500.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.1",
+   "imports": [
+    {
+     "path": "std/time",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/time): a `Date`, `ClockTime` or `Civil` may hold any fields (a struct literal, or a JSON body decoded through `derive Json`), and with a year or another field far outside the calendar, `Date.weekday`, `add_days`, `add_months`, `days_until` and `display`, and `Civil.unix`, `to_time` and `format` faulted on the native backends (an intermediate overflow), so a server calling one of them on a decoded value could be stopped by a request; the Go backend gave wrong answers instead. Now weekday, display, to_time and format answer for every field, and the others fault only when their answer itself does not fit `Int`. Golden time_hostile_date: a server decoding a `Date` at `Int`'s ends answers 200 on every backend, where 0.51.0's native backends answered 500.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

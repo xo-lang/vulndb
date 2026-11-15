@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0060",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/png: `png.decode` with `max_pixels` at or above about 2^60 (no limit) refuses a header too large for an Int to hold the image as Go's \"dimension overflow\", where summing its rows overflowed and faulted...",
+ "details": "`png.decode` with `max_pixels` at or above about 2^60 (no limit) refuses a header too large for an Int to hold the image as Go's \"dimension overflow\", where summing its rows overflowed and faulted (a 2147483647x2147483647 16 bit RGBA header), and `png.decode_config` refuses the headers Go refuses. The default limit already refused them. Affected: 0.38.0 to 0.51.1.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0.38.0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/png",
+     "symbols": [
+      "decode",
+      "decode_config"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/png, every backend): `png.decode` with `max_pixels` at or above about 2^60 (no limit) refuses a header too large for an Int to hold the image as Go's \"dimension overflow\", where summing its rows overflowed and faulted (a 2147483647x2147483647 16 bit RGBA header), and `png.decode_config` refuses the headers Go refuses. The default limit already refused them. Affected: 0.38.0 to 0.51.1.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

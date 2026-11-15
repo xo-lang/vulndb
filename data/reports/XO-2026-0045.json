@@ -1,0 +1,33 @@
+{
+ "id": "XO-2026-0045",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: `json.parse_value` and decoding into `json.Value` are linear in nested duplicate keys",
+ "details": "`json.parse_value` and decoding into `json.Value` are linear in nested duplicate keys; each level of `{\"a\":0,\"a\":{...}}` doubled the work, so 600 bytes could hang a program.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": [
+      "parse_value",
+      "Value"
+     ]
+    }
+   ],
+   "backends": [
+    "go"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, Go backend): `json.parse_value` and decoding into `json.Value` are linear in nested duplicate keys; each level of `{\"a\":0,\"a\":{...}}` doubled the work, so 600 bytes could hang a program.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

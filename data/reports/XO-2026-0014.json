@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0014",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: an HTTP/1.1 server never sends a 100 Continue after the response head, and the head waits out one being sent (GO-2021-0224)",
+ "details": "an HTTP/1.1 server never sends a 100 Continue after the response head, and the head waits out one being sent (GO-2021-0224). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2021-0224"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): an HTTP/1.1 server never sends a 100 Continue after the response head, and the head waits out one being sent (GO-2021-0224). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

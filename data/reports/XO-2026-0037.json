@@ -1,0 +1,36 @@
+{
+ "id": "XO-2026-0037",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: a host name check splits the host once, and a certificate with 100 or more names gives `x509: certificate is valid for N names, but none matched HOST` instead of listing them, as Go (GO-2025-4155,...",
+ "details": "a host name check splits the host once, and a certificate with 100 or more names gives `x509: certificate is valid for N names, but none matched HOST` instead of listing them, as Go (GO-2025-4155, GO-2026-5037). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2025-4155",
+  "GO-2026-5037"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    },
+    {
+     "path": "std/tls",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, std/tls; native backends): a host name check splits the host once, and a certificate with 100 or more names gives `x509: certificate is valid for N names, but none matched HOST` instead of listing them, as Go (GO-2025-4155, GO-2026-5037). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0043",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/crypto: the RSA private key operation and decryption's padding checks, X25519, P-256/P-384/P-521 key generation, ECDH and ECDSA signing, Ed25519 keys and signing, and ML-KEM run with Arm's DIT bit set...",
+ "details": "the RSA private key operation and decryption's padding checks, X25519, P-256/P-384/P-521 key generation, ECDH and ECDSA signing, Ed25519 keys and signing, and ML-KEM run with Arm's DIT bit set (decision 0619), as Go 1.24's crypto does. A test binary built at LLVM's -O0 checked PKCS #1 v1.5 padding in a time that followed the data on Apple silicon (dudect |t| 81, no branch in the code); with DIT every class pair passes (max |t| 3.8 at -O0, 1.9 native, 3.1 at -O2). CPUs without FEAT_DIT, x86-64 and wasm are unchanged.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/crypto",
+     "symbols": []
+    },
+    {
+     "path": "std/tls",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/crypto, std/tls, arm64): the RSA private key operation and decryption's padding checks, X25519, P-256/P-384/P-521 key generation, ECDH and ECDSA signing, Ed25519 keys and signing, and ML-KEM run with Arm's DIT bit set (decision 0619), as Go 1.24's crypto does. A test binary built at LLVM's -O0 checked PKCS #1 v1.5 padding in a time that followed the data on Apple silicon (dudect |t| 81, no branch in the code); with DIT every class pair passes (max |t| 3.8 at -O0, 1.9 native, 3.1 at -O2). CPUs without FEAT_DIT, x86-64 and wasm are unchanged.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0007",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: ReverseProxy forwards a query that does not parse rebuilt from what parsed, as Go's cleanQueryParams, so the upstream sees only what the rewrite hook saw (GO-2022-1038, GO-2026-4976)",
+ "details": "ReverseProxy forwards a query that does not parse rebuilt from what parsed, as Go's cleanQueryParams, so the upstream sees only what the rewrite hook saw (GO-2022-1038, GO-2026-4976). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2022-1038",
+  "GO-2026-4976"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, all backends): ReverseProxy forwards a query that does not parse rebuilt from what parsed, as Go's cleanQueryParams, so the upstream sees only what the rewrite hook saw (GO-2022-1038, GO-2026-4976). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

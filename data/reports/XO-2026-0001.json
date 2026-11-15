@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0001",
+ "published": "2026-11-02",
+ "modified": "2026-11-15",
+ "summary": "std/archive: a hostile archive crashed a native program in untar or unzip",
+ "details": "a hostile archive crashed a native program in untar or unzip",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.36.0",
+   "imports": [
+    {
+     "path": "std/archive",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security: a hostile archive crashed a native program in untar or unzip",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

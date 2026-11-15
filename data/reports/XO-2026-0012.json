@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0012",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: an HTTP/2 client drops a response's connection specific fields and a Content-Length that is not one value of at most 2^63 - 1 (GO-2026-6610)",
+ "details": "an HTTP/2 client drops a response's connection specific fields and a Content-Length that is not one value of at most 2^63 - 1 (GO-2026-6610). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-6610"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, all backends): an HTTP/2 client drops a response's connection specific fields and a Content-Length that is not one value of at most 2^63 - 1 (GO-2026-6610). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

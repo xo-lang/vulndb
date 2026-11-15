@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0064",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/url: `url.Values` keeps each key's values in an insertion-ordered Map, as Go's map, where `get`, `all`, `has`, `add`, `set` and `remove` scanned a key list and `add` and `parse_query` copied a key's...",
+ "details": "`url.Values` keeps each key's values in an insertion-ordered Map, as Go's map, where `get`, `all`, `has`, `add`, `set` and `remove` scanned a key list and `add` and `parse_query` copied a key's values to add one, so a handler reading every key of a query a peer fills with up to 10,000 parameters, or one key's 10,000 values, did quadratic work (Mac: reading every key 65 ms to 0.15 ms, Go 0.17 ms; one key's values 189 ms to 0.54 ms).",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/url",
+     "symbols": [
+      "Values"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/url, every backend): `url.Values` keeps each key's values in an insertion-ordered Map, as Go's map, where `get`, `all`, `has`, `add`, `set` and `remove` scanned a key list and `add` and `parse_query` copied a key's values to add one, so a handler reading every key of a query a peer fills with up to 10,000 parameters, or one key's 10,000 values, did quadratic work (Mac: reading every key 65 ms to 0.15 ms, Go 0.17 ms; one key's values 189 ms to 0.54 ms).",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

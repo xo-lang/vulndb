@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0008",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: Request.query_all and url.parse_query count the parameters before splitting and stop at 10000, as Go's ParseQuery (GO-2026-4341)",
+ "details": "Request.query_all and url.parse_query count the parameters before splitting and stop at 10000, as Go's ParseQuery (GO-2026-4341). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-4341"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, all backends): Request.query_all and url.parse_query count the parameters before splitting and stop at 10000, as Go's ParseQuery (GO-2026-4341). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

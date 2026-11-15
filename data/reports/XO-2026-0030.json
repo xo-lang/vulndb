@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0030",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: an IPv4-mapped IPv6 address (::ffff:a.b.c.d) in a SAN or an IP name constraint is a parse error, as Go 1.27.4",
+ "details": "an IPv4-mapped IPv6 address (::ffff:a.b.c.d) in a SAN or an IP name constraint is a parse error, as Go 1.27.4; such a SAN matched an IPv4 host while escaping IPv4 excluded ranges. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, native backends): an IPv4-mapped IPv6 address (::ffff:a.b.c.d) in a SAN or an IP name constraint is a parse error, as Go 1.27.4; such a SAN matched an IPv4 host while escaping IPv4 excluded ranges. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

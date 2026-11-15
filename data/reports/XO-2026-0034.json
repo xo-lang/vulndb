@@ -1,0 +1,32 @@
+{
+ "id": "XO-2026-0034",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: verification deduplicates the intermediates and roots in linear time (8000 intermediates: 80 ms to 9 ms)",
+ "details": "verification deduplicates the intermediates and roots in linear time (8000 intermediates: 80 ms to 9 ms); a peer's chain made it quadratic. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    },
+    {
+     "path": "std/tls",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, std/tls; native backends): verification deduplicates the intermediates and roots in linear time (8000 intermediates: 80 ms to 9 ms); a peer's chain made it quadratic. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

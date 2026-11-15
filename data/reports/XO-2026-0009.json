@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0009",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: an HTTP/2 server decodes a header field cut across CONTINUATION frames once (GO-2023-1571), and an empty CONTINUATION frame that does not end the block is not decoded at all",
+ "details": "an HTTP/2 server decodes a header field cut across CONTINUATION frames once (GO-2023-1571), and an empty CONTINUATION frame that does not end the block is not decoded at all. Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2023-1571"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): an HTTP/2 server decodes a header field cut across CONTINUATION frames once (GO-2023-1571), and an empty CONTINUATION frame that does not end the block is not decoded at all. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

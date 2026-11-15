@@ -1,0 +1,30 @@
+{
+ "id": "XO-2026-0063",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/uuid: `uuid.parse` of some texts holding multi-byte characters faulted while building its error, so a program parsing a peer's UUID text could be stopped",
+ "details": "`uuid.parse` of some texts holding multi-byte characters faulted while building its error, so a program parsing a peer's UUID text could be stopped; it now answers google/uuid's error. Affected: 0.51.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/uuid",
+     "symbols": [
+      "parse"
+     ]
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/uuid, native backends): `uuid.parse` of some texts holding multi-byte characters faulted while building its error, so a program parsing a peer's UUID text could be stopped; it now answers google/uuid's error. Affected: 0.51.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0035",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: chains holding one of the eight compromised intermediates Go 1.27.4 distrusts (by SubjectPublicKeyInfo SHA-256) are refused, as Go (GO-2026-6809)",
+ "details": "chains holding one of the eight compromised intermediates Go 1.27.4 distrusts (by SubjectPublicKeyInfo SHA-256) are refused, as Go (GO-2026-6809). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-6809"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, native backends): chains holding one of the eight compromised intermediates Go 1.27.4 distrusts (by SubjectPublicKeyInfo SHA-256) are refused, as Go (GO-2026-6809). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

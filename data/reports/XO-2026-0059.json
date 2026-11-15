@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0059",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/jpeg: `jpeg.decode` allocates a large image's planes and a progressive image's coefficients only as far as its scans fill them, as Go's lazily zeroed pages do, so a small file whose header asks for a...",
+ "details": "`jpeg.decode` allocates a large image's planes and a progressive image's coefficients only as far as its scans fill them, as Go's lazily zeroed pages do, so a small file whose header asks for a large image and whose scans fail early no longer costs the whole image first (a 20 KB file asking for 10000x10000: 1.1 s and 1.5 GB before, under 1 ms and 4 MB now). Affected: 0.38.0 to 0.51.1.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0.38.0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/jpeg",
+     "symbols": [
+      "decode"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/jpeg, every backend): `jpeg.decode` allocates a large image's planes and a progressive image's coefficients only as far as its scans fill them, as Go's lazily zeroed pages do, so a small file whose header asks for a large image and whose scans fail early no longer costs the whole image first (a 20 KB file asking for 10000x10000: 1.1 s and 1.5 GB before, under 1 ms and 4 MB now). Affected: 0.38.0 to 0.51.1.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

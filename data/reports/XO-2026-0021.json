@@ -1,0 +1,27 @@
+{
+ "id": "XO-2026-0021",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/native/llrt/rsa: the RSA private key operation's check of its result against the public operation compares in constant time (`ct.bytes_equal`, as Go's constant time Equal)",
+ "details": "the RSA private key operation's check of its result against the public operation compares in constant time (`ct.bytes_equal`, as Go's constant time Equal); a `==` on Bytes could stop at the first differing byte.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/crypto",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/native/llrt/rsa): the RSA private key operation's check of its result against the public operation compares in constant time (`ct.bytes_equal`, as Go's constant time Equal); a `==` on Bytes could stop at the first differing byte.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

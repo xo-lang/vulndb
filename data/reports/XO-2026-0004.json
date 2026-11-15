@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0004",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: a server closes the connection after a request with both Transfer-Encoding and Content-Length, framing it by chunked as RFC 9112 6.3 requires (request smuggling class)",
+ "details": "a server closes the connection after a request with both Transfer-Encoding and Content-Length, framing it by chunked as RFC 9112 6.3 requires (request smuggling class). Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): a server closes the connection after a request with both Transfer-Encoding and Content-Length, framing it by chunked as RFC 9112 6.3 requires (request smuggling class). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

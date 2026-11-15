@@ -1,0 +1,25 @@
+{
+ "id": "XO-2026-0058",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/norm: `normalize` and `is_normalized` follow x/text's stream-safe text (a U+034F after 30 non-starters in a row), so a long run of combining marks normalizes in linear time (it was quadratic: about 22 s...",
+ "details": "`normalize` and `is_normalized` follow x/text's stream-safe text (a U+034F after 30 non-starters in a row), so a long run of combining marks normalizes in linear time (it was quadratic: about 22 s for 1 MB of marks) and such text normalizes as Go's does. Affected: 0.38.0 to 0.51.1.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0.38.0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/norm",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/norm, every backend): `normalize` and `is_normalized` follow x/text's stream-safe text (a U+034F after 30 non-starters in a row), so a long run of combining marks normalizes in linear time (it was quadratic: about 22 s for 1 MB of marks) and such text normalizes as Go's does. Affected: 0.38.0 to 0.51.1.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

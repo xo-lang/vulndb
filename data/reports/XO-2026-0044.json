@@ -1,0 +1,35 @@
+{
+ "id": "XO-2026-0044",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: an RSA key below 1024 bits no longer verifies a certificate or TLS handshake signature",
+ "details": "an RSA key below 1024 bits no longer verifies a certificate or TLS handshake signature; the floor was 128 bytes, so a 1017 to 1023 bit key verified where Go refuses it.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    },
+    {
+     "path": "std/tls",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "llvm",
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, std/tls, native and LLVM backends): an RSA key below 1024 bits no longer verifies a certificate or TLS handshake signature; the floor was 128 bytes, so a 1017 to 1023 bit key verified where Go refuses it.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

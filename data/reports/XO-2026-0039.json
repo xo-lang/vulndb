@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0039",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/asn1: `parse` reads nested values by offset instead of slicing each level, which copied the input per level there (800 KB of nesting ran wasm out of memory)",
+ "details": "`parse` reads nested values by offset instead of slicing each level, which copied the input per level there (800 KB of nesting ran wasm out of memory). Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/asn1",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "go",
+    "wasm"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/asn1; WebAssembly and Go backends): `parse` reads nested values by offset instead of slicing each level, which copied the input per level there (800 KB of nesting ran wasm out of memory). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

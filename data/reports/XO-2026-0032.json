@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0032",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/x509: duplicate extensions and policies are found with a map",
+ "details": "duplicate extensions and policies are found with a map; a certificate with 30000 extensions took 453 ms to parse, now 4 ms. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/x509",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/x509, native backends): duplicate extensions and policies are found with a map; a certificate with 30000 extensions took 453 ms to parse, now 4 ms. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

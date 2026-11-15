@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0048",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: the stream Decoder (`json.decoder()`) is linear in a value sent in small pieces",
+ "details": "the stream Decoder (`json.decoder()`) is linear in a value sent in small pieces; it rescanned the whole unfinished value on every write (480 KB in 64 byte writes took 1.6 s, now 3 ms).",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": [
+      "decoder"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, every backend): the stream Decoder (`json.decoder()`) is linear in a value sent in small pieces; it rescanned the whole unfinished value on every write (480 KB in 64 byte writes took 1.6 s, now 3 ms).",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

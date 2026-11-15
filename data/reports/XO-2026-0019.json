@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0019",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "prelude: a sub Fs denies Windows device names (NUL, COM1, CONIN$, ...) and colons under its root, so `http.file_server` cannot open a device (GO-2022-1143)",
+ "details": "a sub Fs denies Windows device names (NUL, COM1, CONIN$, ...) and colons under its root, so `http.file_server` cannot open a device (GO-2022-1143). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2022-1143"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/prelude",
+     "symbols": []
+    }
+   ],
+   "platforms": [
+    "Windows"
+   ]
+  }
+ ],
+ "changelog": "- Security (prelude, Windows, all backends): a sub Fs denies Windows device names (NUL, COM1, CONIN$, ...) and colons under its root, so `http.file_server` cannot open a device (GO-2022-1143). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

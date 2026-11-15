@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0029",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/template html mode: Go 1.26.11's html/template fixes (CVE-2026-56858 and go.dev/issue/81821, 81823): a value after `{`, `}`, `${`, `yield`, a keyword property or a `#private` name in a script is escaped for the right...",
+ "details": "Go 1.26.11's html/template fixes (CVE-2026-56858 and go.dev/issue/81821, 81823): a value after `{`, `}`, `${`, `yield`, a keyword property or a `#private` name in a script is escaped for the right regexp or division context; `<script type=\"\">` is JavaScript; `url =` in a meta refresh is filtered; branches at different template literal brace depths do not join. Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "CVE-2026-56858"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/template",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/template html mode, native backends): Go 1.26.11's html/template fixes (CVE-2026-56858 and go.dev/issue/81821, 81823): a value after `{`, `}`, `${`, `yield`, a keyword property or a `#private` name in a script is escaped for the right regexp or division context; `<script type=\"\">` is JavaScript; `url =` in a meta refresh is filtered; branches at different template literal brace depths do not join. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

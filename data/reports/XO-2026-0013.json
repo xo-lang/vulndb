@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0013",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: serve_content ignores a Range header of more than 200 ranges, as Go 1.26.11 (GO-2026-6609)",
+ "details": "serve_content ignores a Range header of more than 200 ranges, as Go 1.26.11 (GO-2026-6609). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-6609"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): serve_content ignores a Range header of more than 200 ranges, as Go 1.26.11 (GO-2026-6609). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0028",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/tls: a peer may send at most 16 records or post-handshake messages in a row that do not advance the connection (empty application data, warning alerts, KeyUpdates, tickets), as Go 1.26.11",
+ "details": "a peer may send at most 16 records or post-handshake messages in a row that do not advance the connection (empty application data, warning alerts, KeyUpdates, tickets), as Go 1.26.11; KeyUpdate spam cost a key derivation each. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/tls",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/tls, native backends): a peer may send at most 16 records or post-handshake messages in a row that do not advance the connection (empty application data, warning alerts, KeyUpdates, tickets), as Go 1.26.11; KeyUpdate spam cost a key derivation each. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

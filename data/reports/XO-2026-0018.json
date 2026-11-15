@@ -1,0 +1,25 @@
+{
+ "id": "XO-2026-0018",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/textproto: read_header is linear in the number of fields (40000 fields: 5.8 s to 3 ms)",
+ "details": "read_header is linear in the number of fields (40000 fields: 5.8 s to 3 ms); std/mail, std/multipart and std/smtp read headers with it. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/textproto",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/textproto, all backends): read_header is linear in the number of fields (40000 fields: 5.8 s to 3 ms); std/mail, std/multipart and std/smtp read headers with it. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

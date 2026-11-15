@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0047",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: `parse_value` is linear in nested duplicate keys (2000 levels over a 200,000 element array took 1.5 s, now 4 ms)",
+ "details": "`parse_value` is linear in nested duplicate keys (2000 levels over a 200,000 element array took 1.5 s, now 4 ms).",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "llvm",
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, native and LLVM backends): `parse_value` is linear in nested duplicate keys (2000 levels over a 200,000 element array took 1.5 s, now 4 ms).",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

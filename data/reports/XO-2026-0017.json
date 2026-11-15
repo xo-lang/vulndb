@@ -1,0 +1,29 @@
+{
+ "id": "XO-2026-0017",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/multipart: a part's header is read in linear time, a streamed reader's header line stops at the header limit as it is read (GO-2024-2599), and parse_form's header limit never goes below zero (GO-2026-6608)",
+ "details": "a part's header is read in linear time, a streamed reader's header line stops at the header limit as it is read (GO-2024-2599), and parse_form's header limit never goes below zero (GO-2026-6608). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2024-2599",
+  "GO-2026-6608"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/multipart",
+     "symbols": []
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/multipart, all backends): a part's header is read in linear time, a streamed reader's header line stops at the header limit as it is read (GO-2024-2599), and parse_form's header limit never goes below zero (GO-2026-6608). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

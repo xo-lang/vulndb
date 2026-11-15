@@ -1,0 +1,42 @@
+{
+ "id": "XO-2026-0020",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/textproto: protocol errors quote the line they report, as Go 1.26.2 and later do, so a peer's control bytes or newlines cannot forge log lines: `malformed MIME header line: \": v\"` (a control byte as `\\x01`),...",
+ "details": "protocol errors quote the line they report, as Go 1.26.2 and later do, so a peer's control bytes or newlines cannot forge log lines: `malformed MIME header line: \": v\"` (a control byte as `\\x01`), `short response: \"12 x\"`, and a reply's error `550 \"5.1.1 no such user\"` (textproto's coded error and `SmtpErr.display()`). **Breaking** for a program that matched the old text; match the quoted form. The Go backend gives the same text with Go 1.26.2 or later.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/textproto",
+     "symbols": []
+    },
+    {
+     "path": "std/multipart",
+     "symbols": []
+    },
+    {
+     "path": "std/smtp",
+     "symbols": []
+    },
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "go"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/textproto, std/multipart, std/smtp, std/http client; every backend; GO-2026-5039): protocol errors quote the line they report, as Go 1.26.2 and later do, so a peer's control bytes or newlines cannot forge log lines: `malformed MIME header line: \": v\"` (a control byte as `\\x01`), `short response: \"12 x\"`, and a reply's error `550 \"5.1.1 no such user\"` (textproto's coded error and `SmtpErr.display()`). **Breaking** for a program that matched the old text; match the quoted form. The Go backend gives the same text with Go 1.26.2 or later.",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

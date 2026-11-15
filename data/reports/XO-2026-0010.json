@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0010",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: an HTTP/2 server's SETTINGS and connection WINDOW_UPDATE frames no longer walk every open stream (GO-2026-6611)",
+ "details": "an HTTP/2 server's SETTINGS and connection WINDOW_UPDATE frames no longer walk every open stream (GO-2026-6611). Affected: 0.50.1 and earlier.",
+ "aliases": [
+  "GO-2026-6611"
+ ],
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): an HTTP/2 server's SETTINGS and connection WINDOW_UPDATE frames no longer walk every open stream (GO-2026-6611). Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

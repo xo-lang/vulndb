@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0016",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/http: one HTTP/2 connection buffers unfinished request bodies of at most four times XO_HTTP_MAX_BODY together",
+ "details": "one HTTP/2 connection buffers unfinished request bodies of at most four times XO_HTTP_MAX_BODY together; the stream that would pass it is refused with REFUSED_STREAM, which a client may retry. Affected: 0.50.1 and earlier.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/http",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/http, native backends): one HTTP/2 connection buffers unfinished request bodies of at most four times XO_HTTP_MAX_BODY together; the stream that would pass it is refused with REFUSED_STREAM, which a client may retry. Affected: 0.50.1 and earlier.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}

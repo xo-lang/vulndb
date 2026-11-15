@@ -1,0 +1,31 @@
+{
+ "id": "XO-2026-0046",
+ "published": "2026-11-13",
+ "modified": "2026-11-15",
+ "summary": "std/json: object keys are hashed with the seeded Str hash Map uses, so a peer can no longer send keys that all collide (16,384 such keys took 857 ms to parse, now as long as any others)",
+ "details": "object keys are hashed with the seeded Str hash Map uses, so a peer can no longer send keys that all collide (16,384 such keys took 857 ms to parse, now as long as any others).",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0",
+   "fixed": "0.51.0",
+   "imports": [
+    {
+     "path": "std/json",
+     "symbols": []
+    }
+   ],
+   "backends": [
+    "llvm",
+    "native"
+   ]
+  }
+ ],
+ "changelog": "- Security (std/json, native and LLVM backends): object keys are hashed with the seeded Str hash Map uses, so a peer can no longer send keys that all collide (16,384 such keys took 857 ms to parse, now as long as any others).",
+ "review": {
+  "state": "backfilled",
+  "notes": [
+   "introduced not stated in the CHANGELOG: 0 (every release before the fix) until reviewed"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "XO-2026-0061",
+ "published": "2026-11-15",
+ "modified": "2026-11-15",
+ "summary": "std/csv: a `csv.reader`'s fields are valid UTF-8 (decision 0259): a file's bytes that are not UTF-8 became Str fields unchecked, so the 7 byte file `\"x\"\"\\x82\"` read and written back with `csv.format` faulted",
+ "details": "a `csv.reader`'s fields are valid UTF-8 (decision 0259): a file's bytes that are not UTF-8 became Str fields unchecked, so the 7 byte file `\"x\"\"\\x82\"` read and written back with `csv.format` faulted; each byte of an invalid sequence is now U+FFFD, error columns stay Go's. A line longer than the read buffer was searched and copied again after every 64 KiB read, quadratic (a 128 MB line 1,489 ms, now 27 ms). Affected: 0.38.0 to 0.51.1.",
+ "affected": [
+  {
+   "module": "std",
+   "introduced": "0.38.0",
+   "last_affected": "0.51.1",
+   "imports": [
+    {
+     "path": "std/csv",
+     "symbols": [
+      "reader",
+      "format"
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": "- Security (std/csv, every backend): a `csv.reader`'s fields are valid UTF-8 (decision 0259): a file's bytes that are not UTF-8 became Str fields unchecked, so the 7 byte file `\"x\"\"\\x82\"` read and written back with `csv.format` faulted; each byte of an invalid sequence is now U+FFFD, error columns stay Go's. A line longer than the read buffer was searched and copied again after every 64 KiB read, quadratic (a 128 MB line 1,489 ms, now 27 ms). Affected: 0.38.0 to 0.51.1.",
+ "review": {
+  "state": "backfilled",
+  "notes": []
+ }
+}
